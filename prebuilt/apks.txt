@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: The PerleOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# <module> <sha256> <url>
+# Official builds, signed by their developers. Signing certificate SHA-256:
+#   microG (GmsCore, FakeStore): 9bd06727e62796c0130eb6dab39b73157451582cbd138e86c468acc395d14165
+#   F-Droid (FDroid, FDroidPrivilegedExtension): 43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab
+
+# microG Services 0.3.17.252432 (versionCode 252432034)
+GmsCore e5e6cba078bdec812b5450599350e5c1a12c8b7438da5bf77123af170f8c1a35 https://github.com/microg/GmsCore/releases/download/v0.3.17.252432/com.google.android.gms-252432034.apk
+# microG Companion (versionCode 84022634), same release
+FakeStore 9b8616011cc8f026bcbbe094df850794abb9d6d9f23214d7a8f8c4d1033ea012 https://github.com/microg/GmsCore/releases/download/v0.3.17.252432/com.android.vending-84022634.apk
+# F-Droid 1.23.2 (versionCode 1023052)
+FDroid 985f5181d48bb6bafd54083a048b391271e0ab28385881cc41294fb01a222762 https://f-droid.org/repo/org.fdroid.fdroid_1023052.apk
+# F-Droid Privileged Extension (versionCode 2140)
+FDroidPrivilegedExtension 6261445e671bea58fd8d5b7c10140845a44a01940cc2e1ad8c52e3aa4a264e94 https://f-droid.org/repo/org.fdroid.fdroid.privileged_2140.apk

@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: The PerleOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+# Downloaded by fetch-apks.sh
+/prebuilt/*.apk
+/prebuilt/.*.apk
+/prebuilt/*/

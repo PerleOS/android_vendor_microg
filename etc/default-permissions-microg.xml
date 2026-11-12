@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The PerleOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!--
+     Runtime permissions granted on first boot so that push messages and
+     network location work after setup. The user can revoke them (fixed="false");
+     the other permissions are requested by the apps when needed.
+-->
+<exceptions>
+    <exception package="com.google.android.gms">
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="false" />
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false" />
+        <permission name="android.permission.GET_ACCOUNTS" fixed="false" />
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false" />
+    </exception>
+
+    <exception package="com.android.vending">
+        <permission name="android.permission.GET_ACCOUNTS" fixed="false" />
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false" />
+    </exception>
+</exceptions>

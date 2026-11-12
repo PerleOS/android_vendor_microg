@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The PerleOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- GmsCore keeps its push connection and location updates in Doze and Data Saver. -->
+<config>
+    <allow-in-power-save package="com.google.android.gms" />
+    <allow-in-data-usage-save package="com.google.android.gms" />
+    <allow-unthrottled-location package="com.google.android.gms" />
+</config>

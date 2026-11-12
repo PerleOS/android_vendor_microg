@@ -1,0 +1,85 @@
+// SPDX-FileCopyrightText: The PerleOS Project
+// SPDX-License-Identifier: Apache-2.0
+
+// The APKs are installed byte for byte (preprocessed): the platform only lets
+// GmsCore and FakeStore spoof the Google signature when they carry the microG
+// signature. The privileged ones ship compressed dex, hence
+// skip_preprocessed_apk_checks. No dexpreopt: the apps update themselves.
+// GmsCore is in Android.mk: it needs its native libraries installed.
+
+android_app_import {
+    name: "FakeStore",
+    apk: "prebuilt/FakeStore.apk",
+    preprocessed: true,
+    skip_preprocessed_apk_checks: true,
+    privileged: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+    required: [
+        "default-permissions-microg.xml",
+        "privapp-permissions-microg.xml",
+    ],
+}
+
+android_app_import {
+    name: "FDroid",
+    apk: "prebuilt/FDroid.apk",
+    preprocessed: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+    required: ["additional_repos.xml"],
+}
+
+android_app_import {
+    name: "FDroidPrivilegedExtension",
+    apk: "prebuilt/FDroidPrivilegedExtension.apk",
+    preprocessed: true,
+    skip_preprocessed_apk_checks: true,
+    privileged: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    required: ["privapp-permissions-microg.xml"],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-microg.xml",
+    src: "etc/privapp-permissions-microg.xml",
+    sub_dir: "permissions",
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "default-permissions-microg.xml",
+    src: "etc/default-permissions-microg.xml",
+    sub_dir: "default-permissions",
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "sysconfig-microg.xml",
+    src: "etc/sysconfig-microg.xml",
+    sub_dir: "sysconfig",
+    product_specific: true,
+}
+
+// F-Droid reads <partition>/etc/org.fdroid.fdroid/additional_repos.xml.
+prebuilt_etc {
+    name: "additional_repos.xml",
+    src: "etc/additional_repos.xml",
+    sub_dir: "org.fdroid.fdroid",
+    product_specific: true,
+}
