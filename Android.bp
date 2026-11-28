@@ -42,19 +42,6 @@ android_app_import {
     required: ["additional_repos.xml"],
 }
 
-android_app_import {
-    name: "FDroidPrivilegedExtension",
-    apk: "prebuilt/FDroidPrivilegedExtension.apk",
-    preprocessed: true,
-    skip_preprocessed_apk_checks: true,
-    privileged: true,
-    product_specific: true,
-    dex_preopt: {
-        enabled: false,
-    },
-    required: ["privapp-permissions-microg.xml"],
-}
-
 prebuilt_etc {
     name: "privapp-permissions-microg.xml",
     src: "etc/privapp-permissions-microg.xml",

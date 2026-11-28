@@ -12,7 +12,8 @@ microG and F-Droid for PerleOS, installed to `product`:
 | GmsCore | `com.google.android.gms` (microG Services) | `priv-app` |
 | FakeStore | `com.android.vending` (microG Companion) | `priv-app` |
 | FDroid | `org.fdroid.fdroid` | `app`, with the microG repository preset |
-| FDroidPrivilegedExtension | `org.fdroid.fdroid.privileged` | `priv-app` |
+
+F-Droid 2.0 installs through the platform session installer: a new install needs one confirmation, and updates of the apps it installed that target Android 14 or later run in the background (`UPDATE_PACKAGES_WITHOUT_USER_ACTION`). It no longer uses the F-Droid Privileged Extension, which is therefore not installed. Apps installed through the extension on an earlier build have it as installer of record: their first update through F-Droid asks for a confirmation.
 
 The APKs are the official builds, signed by the microG team and by F-Droid. They are not stored in this repository: `fetch-apks.sh` downloads them into `prebuilt/` and checks each against the SHA-256 pinned in `prebuilt/apks.txt` (F-Droid APKs are also looked up in `archive/` once F-Droid has moved them there). `vendorsetup.sh` runs it from `source build/envsetup.sh`, so a tree that has the APKs needs no network.
 
